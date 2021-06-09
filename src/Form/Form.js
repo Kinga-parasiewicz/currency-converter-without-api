@@ -25,7 +25,7 @@ export const Form = ({ calculateResult }) => {
       <Fieldset>
         <Legend>Uzupełnij dane</Legend>
         <LabelText>
-          Kwota w zł*:
+          Kwota * :
           <Input
             value={amount}
             onChange={({ target }) => setAmount(target.value)}

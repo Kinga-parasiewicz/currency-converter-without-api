@@ -41,8 +41,9 @@ export const LabelText = styled.label`
 
 export const Input = styled.input`
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     padding: 10px;
+    margin-left:30px;
     border: 1px solid black;
     border-radius: 4px;
     font-size: 16px;
@@ -55,10 +56,10 @@ export const Input = styled.input`
 
 export const Select = styled.select`
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     padding: 10px;
     margin-top:10px;
-    margin-left:50px;
+    margin-left:16px;
     border: 1px solid black;
     border-radius: 4px;
     font-size: 16px;
