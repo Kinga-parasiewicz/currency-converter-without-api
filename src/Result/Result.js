@@ -6,7 +6,7 @@ export const Result = ({ result }) => (
         <TextBox>
             <ResultText>
                 <SourceAmount>
-                    {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;
+              {result.sourceAmount.toFixed(2)}&nbsp;{result.sourceCurrency}&nbsp;
                 </SourceAmount>
                     to&nbsp;
                 <TargetAmount>

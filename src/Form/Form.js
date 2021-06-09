@@ -12,11 +12,12 @@ import {
 
 export const Form = ({ calculateResult }) => {
   const [currency, setCurrency] = useState(currencies[0].short);
+  const [sourceCurrency, setSourceCurrency] = useState(currencies[0].short)
   const [amount, setAmount] = useState("");
 
   const onSubmit = (event) => {
     event.preventDefault();
-    calculateResult(currency, amount);
+    calculateResult(currency, amount, sourceCurrency);
   };
 
   return (
@@ -28,14 +29,27 @@ export const Form = ({ calculateResult }) => {
           <Input
             value={amount}
             onChange={({ target }) => setAmount(target.value)}
-            placeholder="Podaj kwotę w zł"
+            placeholder="Podaj kwotę"
             type="number"
             required
             step="0.01"
           />
         </LabelText>
         <LabelText>
-          Waluta:
+          Waluta z :
+          <Select
+            value={sourceCurrency}
+            onChange={({ target }) => setSourceCurrency(target.value)}
+          >
+            {currencies.map((currency) => (
+              <option key={currency.short} value={currency.short}>
+                {currency.name}
+              </option>
+            ))}
+          </Select>
+        </LabelText>
+        <LabelText>
+          Waluta na:
           <Select
             value={currency}
             onChange={({ target }) => setCurrency(target.value)}

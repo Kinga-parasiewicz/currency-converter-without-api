@@ -7,13 +7,15 @@ import { Container } from "./Container/styled"
 
 function App() {
   const [result, setResult] = useState();
-  const calculateResult = (currency, amount) => {
+  const calculateResult = (currency, amount, sourceCurrency) => {
     const rate = currencies.find(({ short }) => short === currency).rate;
+    const sourceRate = currencies.find(({short}) =>short === sourceCurrency).rate;
 
     setResult({
       sourceAmount: +amount,
-      targetAmount: amount / rate,
+      targetAmount: (amount * sourceRate) / rate,
       currency,
+      sourceCurrency,
     });
   };
 
@@ -22,7 +24,7 @@ function App() {
       <Container>
       <Header title="Kalkulator Walut" />
       <Form calculateResult={calculateResult}/>
-      <Result result={result} />
+      <Result result={result}/>
       </Container>
     </>
   );
