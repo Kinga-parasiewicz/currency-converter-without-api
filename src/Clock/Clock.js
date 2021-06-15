@@ -15,11 +15,15 @@ export const Clock = () => {
     setTimeContent(date.toLocaleTimeString());
   }, [date]);
 
-  setTimeout(() => {
-    setInterval(() => {
+  useEffect(() => {
+    const intervalId = setInterval(() => {
       setDate(new Date());
     }, 1000);
-  });
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
   return (
     <StyledClock>
       Dzisiaj jest {structureDate}, &nbsp;{timeContent}
