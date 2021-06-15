@@ -3,13 +3,15 @@ import { Header } from "./Header/Header";
 import { currencies } from "./currencies";
 import { Form } from "./Form/Form";
 import { Result } from "./Result/Result";
-import { Container } from "./Container/styled"
+import { Container } from "./Container";
+import { Clock } from "./Clock/Clock";
 
 function App() {
   const [result, setResult] = useState();
   const calculateResult = (currency, amount, sourceCurrency) => {
     const rate = currencies.find(({ short }) => short === currency).rate;
-    const sourceRate = currencies.find(({short}) =>short === sourceCurrency).rate;
+    const sourceRate = currencies.find(({ short }) => short === sourceCurrency)
+      .rate;
 
     setResult({
       sourceAmount: +amount,
@@ -22,9 +24,9 @@ function App() {
   return (
     <>
       <Container>
-      <Header title="Kalkulator Walut" />
-      <Form calculateResult={calculateResult}/>
-      <Result result={result}/>
+        <Header title="Kalkulator Walut" />
+        <Form calculateResult={calculateResult} bodyClock={<Clock />} />
+        <Result result={result} />
       </Container>
     </>
   );
