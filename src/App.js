@@ -4,7 +4,7 @@ import { currencies } from "./currencies";
 import { Form } from "./Form/Form";
 import { Result } from "./Result/Result";
 import { Container } from "./Container";
-import { Clock } from "./Clock/Clock";
+
 
 function App() {
   const [result, setResult] = useState();
@@ -25,7 +25,7 @@ function App() {
     <>
       <Container>
         <Header title="Kalkulator Walut" />
-        <Form calculateResult={calculateResult} bodyClock={<Clock />} />
+        <Form calculateResult={calculateResult} />
         <Result result={result} />
       </Container>
     </>

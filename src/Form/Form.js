@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { currencies } from "./../currencies";
+import { Clock} from "../Clock/Clock";
 import {
   Fieldset,
   Legend,
@@ -10,7 +11,7 @@ import {
   StyledForm,
 } from "./styled";
 
-export const Form = ({ calculateResult, bodyClock }) => {
+export const Form = ({ calculateResult, }) => {
   const [currency, setCurrency] = useState(currencies[1].short);
   const [sourceCurrency, setSourceCurrency] = useState(currencies[0].short);
   const [amount, setAmount] = useState("");
@@ -24,9 +25,9 @@ export const Form = ({ calculateResult, bodyClock }) => {
     <StyledForm onSubmit={onSubmit}>
       <Fieldset>
         <Legend>Uzupełnij dane</Legend>
-        {bodyClock}
+        <Clock/>
         <LabelText>
-          Kwota * :
+          Kwota *:
           <Input
             value={amount}
             onChange={({ target }) => setAmount(target.value)}

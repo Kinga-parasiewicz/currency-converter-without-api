@@ -42,7 +42,7 @@ export const Input = styled.input`
   width: 100%;
   max-width: 250px;
   padding: 10px;
-  margin-left: 30px;
+  margin-left: 20px;
   border: 1px solid black;
   border-radius: 4px;
   font-size: 16px;
@@ -50,6 +50,10 @@ export const Input = styled.input`
   text-transform: uppercase;
   &:required {
     background-color: #eee;
+  }
+
+  @media(max-width:767px){
+    margin-left:0px;
   }
 `;
 
