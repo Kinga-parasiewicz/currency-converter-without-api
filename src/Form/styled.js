@@ -52,8 +52,8 @@ export const Input = styled.input`
     background-color: #eee;
   }
 
-  @media(max-width:767px){
-    margin-left:0px;
+  @media (max-width: 767px) {
+    margin-left: 0px;
   }
 `;
 
