@@ -12,7 +12,7 @@ export const Title = styled.h1`
   text-align: center;
   font-weight: 400;
   letter-spacing: 1px;
-  @media (max-width: 768px) {
+  @media (max-width: ${({theme}) =>theme.breakpoint.tabletMin}px) {
     padding-top: 20px;
   }
 `;
