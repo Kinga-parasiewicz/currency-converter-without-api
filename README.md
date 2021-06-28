@@ -8,9 +8,12 @@ https://kinga-parasiewicz.github.io/currency-converter-without-api/
 
 ## Technologies 
 
-- JS 
-- React
 - Styled Components
+- ES6 features
+- Hooks: useState, useEffect
+- Custom Hooks
+- Responsive Web Design
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
