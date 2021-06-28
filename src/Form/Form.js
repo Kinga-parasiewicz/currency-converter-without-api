@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { currencies } from "./../currencies";
 import { Clock } from "../Clock/Clock";
 import {
   Fieldset,
@@ -9,11 +8,12 @@ import {
   Select,
   Button,
   StyledForm,
+  InformationApi,
 } from "./styled";
 
-export const Form = ({ calculateResult }) => {
-  const [currency, setCurrency] = useState(currencies[1].short);
-  const [sourceCurrency, setSourceCurrency] = useState(currencies[0].short);
+export const Form = ({ calculateResult, rates, ratesData }) => {
+  const [currency, setCurrency] = useState("PLN");
+  const [sourceCurrency, setSourceCurrency] = useState("EUR");
   const [amount, setAmount] = useState("");
 
   const onSubmit = (event) => {
@@ -24,46 +24,60 @@ export const Form = ({ calculateResult }) => {
   return (
     <StyledForm onSubmit={onSubmit}>
       <Fieldset>
-        <Legend>Uzupełnij dane</Legend>
-        <Clock />
-        <LabelText>
-          Kwota *:
-          <Input
-            value={amount}
-            onChange={({ target }) => setAmount(target.value)}
-            placeholder="Podaj kwotę"
-            type="number"
-            required
-            step="0.01"
-          />
-        </LabelText>
-        <LabelText>
-          Waluta z :
-          <Select
-            value={sourceCurrency}
-            onChange={({ target }) => setSourceCurrency(target.value)}
-          >
-            {currencies.map((currency) => (
-              <option key={currency.short} value={currency.short}>
-                {currency.name}
-              </option>
-            ))}
-          </Select>
-        </LabelText>
-        <LabelText>
-          Waluta na:
-          <Select
-            value={currency}
-            onChange={({ target }) => setCurrency(target.value)}
-          >
-            {currencies.map((currency) => (
-              <option key={currency.short} value={currency.short}>
-                {currency.name}
-              </option>
-            ))}
-          </Select>
-        </LabelText>
-        <Button>Przelicz</Button>
+        {ratesData.state === "loading" ? (
+          <InformationApi>
+            Poczekaj chwilkę, ładuję teraz dane z Europejskiego Banku
+            Centralnego 😄
+          </InformationApi>
+        ) : ratesData.state === "error" ? (
+          <InformationApi>
+            ? Ojojoj...😟 wygląda na to, że wystapił błąd, chyba masz problem z
+            internetem, jeśli nie - spróbuj później
+          </InformationApi>
+        ) : (
+          <>
+            <Legend>Uzupełnij dane</Legend>
+            <Clock />
+            <LabelText>
+              Kwota *:
+              <Input
+                value={amount}
+                onChange={({ target }) => setAmount(target.value)}
+                placeholder="Podaj kwotę"
+                type="number"
+                required
+                step="0.01"
+              />
+            </LabelText>
+            <LabelText>
+              Waluta z :
+              <Select
+                value={sourceCurrency}
+                onChange={({ target }) => setSourceCurrency(target.value)}
+              >
+                {Object.keys(rates).map((sourceCurrency) => (
+                  <option key={sourceCurrency} value={sourceCurrency}>
+                    {sourceCurrency}
+                  </option>
+                ))}
+              </Select>
+            </LabelText>
+            <LabelText>
+              Waluta na:
+              <Select
+                value={currency}
+                onChange={({ target }) => setCurrency(target.value)}
+              >
+                {Object.keys(rates).map((currency) => (
+                  <option key={currency} value={currency}>
+                    {currency}
+                  </option>
+                ))}
+              </Select>
+            </LabelText>
+            <Button>Przelicz</Button>
+          </>
+        )}
       </Fieldset>
     </StyledForm>
   );
