@@ -1,7 +1,7 @@
 # Currency converter 
 
-Currency converter without Api in React. 
-This App has several currencies: EUR, GBP, USD, CHF
+Currency converter with Api in React. 
+
 
 ## Demo 
 https://kinga-parasiewicz.github.io/currency-converter-without-api/
@@ -13,6 +13,7 @@ https://kinga-parasiewicz.github.io/currency-converter-without-api/
 - Hooks: useState, useEffect
 - Custom Hooks
 - Responsive Web Design
+- fetch
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
