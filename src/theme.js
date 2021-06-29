@@ -8,6 +8,6 @@ export const theme = {
     },
     breakpoint:{
       mobile: 767,
-      tabletMin: 768,
+      horizontal: 768,
     },
 };
