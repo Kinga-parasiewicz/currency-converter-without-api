@@ -33,7 +33,7 @@ export const LabelText = styled.label`
   letter-spacing: 2px;
   text-transform: uppercase;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMin}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.horizontal}px) {
     margin-top: 15px;
   }
 `;
@@ -69,7 +69,7 @@ export const Select = styled.select`
   letter-spacing: 1px;
   text-transform: uppercase;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMin}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.horizontal}px) {
     margin-left: 0px;
   }
 `;
