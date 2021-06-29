@@ -7,7 +7,7 @@ export const StyledClock = styled.p`
   margin-bottom: 20px;
   text-align:right;
 
-  @media(max-width:${({theme}) =>theme.breakpoint.tabletMin}px){
+  @media(max-width:${({theme}) =>theme.breakpoint.horizontal}px){
     text-align:right;
     font-size:12px;
   }
