@@ -9,7 +9,7 @@ https://kinga-parasiewicz.github.io/currency-converter-without-api/
 ## Technologies 
 
 - Styled Components
-- ES6 features
+- ES12 features
 - Hooks: useState, useEffect
 - Custom Hooks
 - Responsive Web Design
