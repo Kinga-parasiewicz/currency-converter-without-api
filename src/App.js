@@ -15,7 +15,7 @@ function App() {
 
     setResult({
       sourceAmount: +amount,
-      targetAmount: amount * rate / sourceRate,
+      targetAmount: (amount * rate) / sourceRate,
       currency,
       sourceCurrency,
     });
@@ -25,7 +25,11 @@ function App() {
     <>
       <Container>
         <Header title="Kalkulator Walut" />
-        <Form calculateResult={calculateResult} rates={ratesData.rates} ratesData ={ratesData}/>
+        <Form
+          calculateResult={calculateResult}
+          rates={ratesData.rates}
+          ratesData={ratesData}
+        />
         <Result result={result} />
       </Container>
     </>
