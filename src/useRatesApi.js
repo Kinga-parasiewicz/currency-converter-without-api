@@ -9,7 +9,6 @@ export const useApiRates = () => {
     const getApi = () => {
       const currenciesApi = "https://api.exchangerate.host/latest";
 
-      setTimeout(() => {
         fetch(currenciesApi)
           .then((response) => {
             if (!response.ok) {
@@ -25,9 +24,8 @@ export const useApiRates = () => {
             })
           )
           .catch(setRatesData({ state: "error" }));
-      });
     };
-    setTimeout(getApi, 1000);
+  setTimeout(getApi, 1000);
   }, []);
   return ratesData;
 };
