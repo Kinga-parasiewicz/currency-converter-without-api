@@ -4,7 +4,7 @@ Currency converter with Api in React.
 
 
 ## Demo 
-https://kinga-parasiewicz.github.io/currency-converter-without-api/
+https://kinga-parasiewicz.github.io/currency-with-api/
 
 ## Technologies 
 
