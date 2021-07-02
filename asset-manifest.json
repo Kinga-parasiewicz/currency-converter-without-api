@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/currency-with-api/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/currency-with-api/static/js/main.e75424d3.chunk.js",
-    "main.js.map": "/currency-with-api/static/js/main.e75424d3.chunk.js.map",
+    "main.js": "/currency-with-api/static/js/main.7f9c6bda.chunk.js",
+    "main.js.map": "/currency-with-api/static/js/main.7f9c6bda.chunk.js.map",
     "runtime-main.js": "/currency-with-api/static/js/runtime-main.e8614663.js",
     "runtime-main.js.map": "/currency-with-api/static/js/runtime-main.e8614663.js.map",
     "static/js/2.715e3044.chunk.js": "/currency-with-api/static/js/2.715e3044.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e8614663.js",
     "static/js/2.715e3044.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.e75424d3.chunk.js"
+    "static/js/main.7f9c6bda.chunk.js"
   ]
 }
