@@ -76,9 +76,9 @@ export const Form = ({ calculateResult, rates, state, date }) => {
               </Select>
             </LabelText>
             <Button>Przelicz</Button>
+            <p>Aktualizacja walut z dnia: {date}</p>
           </>
         )}
-        <p>Aktualizacja walut z dnia: {date}</p>
       </Fieldset>
     </StyledForm>
   );
