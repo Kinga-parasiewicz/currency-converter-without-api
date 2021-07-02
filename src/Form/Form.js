@@ -11,7 +11,7 @@ import {
   InformationApi,
 } from "./styled";
 
-export const Form = ({ calculateResult, rates, ratesData }) => {
+export const Form = ({ calculateResult, rates, state, date }) => {
   const [currency, setCurrency] = useState("PLN");
   const [sourceCurrency, setSourceCurrency] = useState("EUR");
   const [amount, setAmount] = useState("");
@@ -24,12 +24,12 @@ export const Form = ({ calculateResult, rates, ratesData }) => {
   return (
     <StyledForm onSubmit={onSubmit}>
       <Fieldset>
-        {ratesData.state === "loading" ? (
+        {state === "loading" ? (
           <InformationApi>
             Poczekaj chwilkę, ładuję teraz dane z Europejskiego Banku
             Centralnego 😄
           </InformationApi>
-        ) : ratesData.state === "error" ? (
+        ) : state === "error" ? (
           <InformationApi>
             ? Ojojoj...😟 wygląda na to, że wystapił błąd, chyba masz problem z
             internetem, jeśli nie - spróbuj później
@@ -78,6 +78,7 @@ export const Form = ({ calculateResult, rates, ratesData }) => {
             <Button>Przelicz</Button>
           </>
         )}
+        <p>Aktualizacja walut z dnia: {date}</p>
       </Fieldset>
     </StyledForm>
   );
