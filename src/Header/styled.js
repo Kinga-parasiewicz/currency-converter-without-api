@@ -6,7 +6,7 @@ export const StyledHeader = styled.header`
 
 export const Title = styled.h1`
   margin: 0 auto;
-  padding-top: 210px;
+  padding-top: 110px;
   padding-bottom: 50px;
   text-transform: uppercase;
   text-align: center;
