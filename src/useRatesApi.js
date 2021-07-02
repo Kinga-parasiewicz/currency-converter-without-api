@@ -3,29 +3,34 @@ import { useState, useEffect } from "react";
 export const useApiRates = () => {
   const [ratesData, setRatesData] = useState({
     state: "loading",
+    date: null,
+    rates: null,
   });
 
   useEffect(() => {
     const getApi = () => {
-      const currenciesApi = "https://api.exchangerate.host/latest";
+      const addressAPI = "https://api.exchangerate.host/latest";
 
-        fetch(currenciesApi)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(response.statusText);
-            }
-            return response;
+      fetch(addressAPI)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(response.statusText);
+          }
+          if (addressAPI !== "https://api.exchangerate.host/latest") {
+            throw new Error(response.statusText);
+          }
+          return response;
+        })
+        .then((response) => response.json())
+        .then(({ date, rates }) =>
+          setRatesData({
+            date,
+            rates,
           })
-          .then((response) => response.json())
-          .then((response) =>
-            setRatesData({
-              date: response.date,
-              rates: response.rates,
-            })
-          )
-          .catch(setRatesData({ state: "error" }));
+        )
+        .catch(() => setRatesData({ state: "error" }));
     };
-  setTimeout(getApi, 1000);
+    setTimeout(getApi, 1000);
   }, []);
   return ratesData;
 };

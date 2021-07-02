@@ -4,7 +4,6 @@ import { Form } from "./Form/Form";
 import { Result } from "./Result/Result";
 import { Container } from "./Container";
 import { useApiRates } from "./useRatesApi";
-
 function App() {
   const [result, setResult] = useState();
 
@@ -28,7 +27,8 @@ function App() {
         <Form
           calculateResult={calculateResult}
           rates={ratesData.rates}
-          ratesData={ratesData}
+          state={ratesData.state}
+          date= {ratesData.date}
         />
         <Result result={result} />
       </Container>
