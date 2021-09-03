@@ -3,6 +3,7 @@ import styled, {css} from "styled-components";
 export const StyledForm = styled.form`
   max-width: 500px;
   margin: 0 auto;
+  
 `;
 
 export const Fieldset = styled.fieldset`
@@ -10,6 +11,7 @@ export const Fieldset = styled.fieldset`
   border: 1px solid ${({ theme }) => theme.color.black};
   border-radius: 4px;
   box-shadow: 3px 3px ${({ theme }) => theme.color.green};
+  background-color: ${({ theme }) => theme.color.white};
 `;
 
 export const Legend = styled.legend`
@@ -84,9 +86,9 @@ export const Button = styled.button`
   justify-content: center;
   padding: 10px;
   border: 1px solid ${({ theme }) => theme.color.green};
-  color: ${({ theme }) => theme.color.green};
+  color: ${({ theme }) => theme.color.white};
   border-radius: 4px;
-  background-color: ${({ theme }) => theme.color.white};
+  background-color: ${({ theme }) => theme.color.green};
   cursor: pointer;
   font-size: 18px;
   text-transform: uppercase;
