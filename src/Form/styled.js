@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 export const StyledForm = styled.form`
   max-width: 500px;
@@ -42,7 +42,7 @@ export const Input = styled.input`
   width: 100%;
   max-width: 250px;
   padding: 10px;
-  margin-left: 20px;
+  margin-left: 35px;
   border: 1px solid ${({ theme }) => theme.color.black};
   border-radius: 4px;
   font-size: 16px;
@@ -69,9 +69,13 @@ export const Select = styled.select`
   letter-spacing: 1px;
   text-transform: uppercase;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.horizontal}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     margin-left: 0px;
   }
+
+  ${({last}) => last && css`
+  margin-left:9px;
+  `}
 `;
 
 export const Button = styled.button`

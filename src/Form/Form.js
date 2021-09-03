@@ -64,7 +64,7 @@ export const Form = ({ calculateResult, rates, state, date }) => {
             </LabelText>
             <LabelText>
               Waluta na:
-              <Select
+              <Select last
                 value={currency}
                 onChange={({ target }) => setCurrency(target.value)}
               >
