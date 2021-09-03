@@ -1,7 +1,7 @@
 import styled from "styled-components";
-
+import money from "./money.jpg"
 export const Container = styled.main`
-  background: ${({ theme }) => theme.color.alto};
+  background:url(${money});
   height: 100vh;
   margin: 0 auto;
 `;
